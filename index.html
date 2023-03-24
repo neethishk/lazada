@@ -73,6 +73,7 @@ function submitForm(){
 var myHeaders = new Headers();
 myHeaders.append("x-api-key", "OXdndJD-sDZE1oa2GVH0MEQovrQui8ATog_i3kRW");
 myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Access-Control-Allow-Origin", "*");
 
 var mile = document.getElementById("feedback-type").value
 var issue = document.getElementById("issue-type").value
@@ -98,7 +99,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://cloud.yellow.ai/cdp/api/v1/event?bot=x1678877569246", requestOptions)
+fetch("https://cors-anywhere.herokuapp.com/corsdemo/https://cloud.yellow.ai/cdp/api/v1/event?bot=x1678877569246", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error.toString()));
